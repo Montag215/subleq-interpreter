@@ -14,6 +14,8 @@ def interpret(args):
         data.append(0)
     i = 0
     for x in lines:
+        if x and x[0]=='$':
+            continue
         for y in x.split():
             data[i] = abs(int(y)+512)%256
             i += 1
